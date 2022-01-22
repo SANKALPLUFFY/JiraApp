@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+	<form th:action ="@{/saveTicket}" th:object="${Ticket}" method ="POST" class="was-validated">
+		<div class="mb-3 mt-3">
+			<b> Summery </b>
+			<input type="text" name="summary" class="ticketSummery" placeholder="Add summery" size="70" required>
+			<div class="invalid-feedback">Please fill out this field.</div>
+		</div>
+		
+		<!--<div>><p><label for="Issue Type"><b>Select a issue type</b></label>
+			<select name="issueType" id="Issue Type" style="width: 100px;" required></select> </div>-->
+			
+			<input type="text" name="issueType" class="ticketSummery" placeholder="Add summery" size="70"/>
+			
+			
+		<p>
+			<b>Description</b>
+			<input type="text" name="description" size="70" />
+		<p>
+			<lable><b>Reporter</b>
+				<input list="DefaultReporter" name="reporter" />
+			required</lable>
+			<datalist id="DefaultReporter">
+				<option value="Rohan" />
+				<option value="Neeraj" />
+				<option value="Ankit" />
+			</datalist>
+			<lable><b>Assignee</b>
+				<input list="DefaultAssignee" name="asignee" />
+			</lable>
+			<datalist id="DefaultAssignee">
+				<option value="Rohan" />
+				<option value="Neeraj" />
+				<option value="Ankit" />
+			</datalist>
+			<p />
+			<input type="submit" value="Submit">
+	</form>
+</body>
+
+</html>
