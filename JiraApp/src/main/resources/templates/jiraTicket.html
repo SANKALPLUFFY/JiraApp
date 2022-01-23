@@ -2,25 +2,22 @@
 <html>
 
 <body>
-	<form th:action ="@{/saveTicket}" th:object="${Ticket}" method ="POST" class="was-validated">
+	<form th:action ="@{/saveTicket}" th:object="${ticket}" method ="post" class="was-validated">
 		<div class="mb-3 mt-3">
 			<b> Summery </b>
-			<input type="text" name="summary" class="ticketSummery" placeholder="Add summery" size="70" required>
+			<input type="text" th:field="*{summary}" id ="summary" name ="summary" class="ticketSummery" placeholder="Add summery" size="70" required>
 			<div class="invalid-feedback">Please fill out this field.</div>
 		</div>
-		
-		<!--<div>><p><label for="Issue Type"><b>Select a issue type</b></label>
-			<select name="issueType" id="Issue Type" style="width: 100px;" required></select> </div>-->
 			
-			<input type="text" name="issueType" class="ticketSummery" placeholder="Add summery" size="70"/>
+			<input type="text" th:field="*{issue}" name ="inputType" class="ticketSummery" placeholder="Add summery" size="70"/>
 			
 			
 		<p>
 			<b>Description</b>
-			<input type="text" name="description" size="70" />
+			<input type="text" th:field="*{description}" name ="description" size="70" />
 		<p>
 			<lable><b>Reporter</b>
-				<input list="DefaultReporter" name="reporter" />
+				<input list="DefaultReporter" th:field="*{reporter}" name = "reporter" />
 			required</lable>
 			<datalist id="DefaultReporter">
 				<option value="Rohan" />
@@ -28,7 +25,7 @@
 				<option value="Ankit" />
 			</datalist>
 			<lable><b>Assignee</b>
-				<input list="DefaultAssignee" name="asignee" />
+				<input list="DefaultAssignee" th:field="*{asignee}" name ="asignee" />
 			</lable>
 			<datalist id="DefaultAssignee">
 				<option value="Rohan" />

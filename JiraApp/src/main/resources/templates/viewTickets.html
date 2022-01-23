@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" />
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ticket Data</title>
+</head>
+
+<body>
+	<h1>Student Details :</h1>
+	<div th:each="tick: ${ticket}">
+
+
+
+		Summary: <b th:text="${tick.summary}"></b>
+		Issue: <b th:text="${tick.issue}"></b>
+		Description: <b th:text="${tick.description}"></b>
+		Asignee: <b th:text="${tick.asignee}"></b>
+	</div>
+</body>
+
+
+</html>

@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 
@@ -8,11 +10,18 @@ import javax.persistence.Id;
 public class Ticket {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String summary;
-	String issueType;
+	String issue;
 	String description;
 	String reporter;
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", summary=" + summary + ", issueType=" + issue + ", description=" + description
+				+ ", reporter=" + reporter + ", asignee=" + asignee + "]";
+	}
+
 	String asignee;
 
 	public String getSummary() {
@@ -23,12 +32,12 @@ public class Ticket {
 		this.summary = summary;
 	}
 
-	public String getIssueType() {
-		return issueType;
+	public String getIssue() {
+		return issue;
 	}
 
-	public void setIssueType(String issueType) {
-		this.issueType = issueType;
+	public void setIssue(String issue) {
+		this.issue = issue;
 	}
 
 	public String getDescription() {
