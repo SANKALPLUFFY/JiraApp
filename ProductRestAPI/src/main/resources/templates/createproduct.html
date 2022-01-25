@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+<boody>
+	<form th.action="@{/saveProduct}" th:object="${product}" method="post" class="was-validated">
+		<div class="mb-3 mt-3">
+			<b> Product </b>
+			<input type="text" th:field="*{name}" name="name" id="name" class="productsummery" placeholder="Add Product Details" size="70"
+				required>
+			<div class="invalid-feedback">Please fill out this field.</div>
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+	</body>
+
+</html>

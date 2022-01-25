@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" />
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ticket Data</title>
+</head>
+
+<body>
+	<h1>Deleted Entry :</h1>
+	<div th:each="tick: ${delete}">
+
+
+
+		Name: <b th:text="${tick.name}"></b>
+		ID: <b th:text="${tick.id}"></b>
+	</div>
+</body>
+
+
+</html>
